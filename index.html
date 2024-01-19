@@ -22,7 +22,6 @@
   </head>
   <body>
     <div id="root"></div>
-
     <script type="module">
       import * as THREE from 'three';
 
@@ -42,7 +41,6 @@
       const gridSize = window.innerWidth / 10;
       const gridSpacing = 1;
       const material = new THREE.LineBasicMaterial({ color: '#9400D3', transparent: true, opacity: 0 });
-      const hoverMaterial = new THREE.MeshStandardMaterial({ color: '#9400D3', emissive: '#9400D3', emissiveIntensity: 1 });
 
       const raycaster = new THREE.Raycaster();
       const mouse = new THREE.Vector2();
@@ -51,13 +49,11 @@
         for (let y = -gridSize; y <= gridSize; y += gridSpacing) {
           const geometry = new THREE.PlaneGeometry(gridSpacing, gridSpacing);
           const edges = new THREE.EdgesGeometry(geometry);
-          const line = new THREE.LineSegments(edges, material);
+          const lineMaterial = material.clone();
+          const line = new THREE.LineSegments(edges, lineMaterial);
           line.position.set(x, y, 0);
+          line.userData.targetOpacity = 0;
           scene.add(line);
-
-          // Add event listener for hover effect
-          line.userData.originalMaterial = material;
-          line.userData.hoverMaterial = hoverMaterial;
         }
       }
 
@@ -72,43 +68,53 @@
 
           raycaster.setFromCamera(mouse, camera);
 
-          // Reset all objects to their original material
+          // Reset target opacity for all objects
           for (let i = 0; i < scene.children.length; i++) {
-            scene.children[i].material = scene.children[i].userData.originalMaterial;
+            scene.children[i].userData.targetOpacity = 0;
           }
 
-          // Set the hover material on the intersected objects
+          // Set target opacity for the intersected objects
           const intersects = raycaster.intersectObjects(scene.children);
           for (let i = 0; i < intersects.length; i++) {
-            // Calculate distance from cursor to object
-            const distance = intersects[i].distance;
-
-            // Adjust opacity based on distance
-            const opacity = 1 - Math.min(distance / 5, 1);
-
-            // Create a new material with the adjusted opacity
-            const material = intersects[i].object.userData.hoverMaterial.clone();
-            material.opacity = opacity;
-
-            intersects[i].object.material = material;
+            intersects[i].object.userData.targetOpacity = 1;
           }
         },
         false
       );
 
-      // Handle mouse out event
-      window.addEventListener('mouseout', () => {
-        // Reset all objects to their original material
-        for (let i = 0; i < scene.children.length; i++) {
-          scene.children[i].material = scene.children[i].userData.originalMaterial;
-        }
-      });
-
       // Animation function
       const animate = () => {
         requestAnimationFrame(animate);
+
+         // Interpolate opacity for all objects
+        for (let i = 0; i < scene.children.length; i++) {
+          const line = scene.children[i];
+          if (line.material.opacity < line.userData.targetOpacity) {
+            // If the line is appearing, use the appearing speed
+            line.material.opacity = THREE.MathUtils.lerp(line.material.opacity, line.userData.targetOpacity, line.userData.appearingSpeed);
+          } else {
+            // If the line is disappearing, use the disappearing speed
+            line.material.opacity = THREE.MathUtils.lerp(line.material.opacity, line.userData.targetOpacity, line.userData.disappearingSpeed);
+          }
+        }
+
         renderer.render(scene, camera);
       };
+
+      // In the grid creation loop
+      for (let x = -gridSize; x <= gridSize; x += gridSpacing) {
+        for (let y = -gridSize; y <= gridSize; y += gridSpacing) {
+          const geometry = new THREE.PlaneGeometry(gridSpacing, gridSpacing);
+          const edges = new THREE.EdgesGeometry(geometry);
+          const lineMaterial = material.clone();
+          const line = new THREE.LineSegments(edges, lineMaterial);
+          line.position.set(x, y, 0);
+          line.userData.targetOpacity = 0;
+          line.userData.appearingSpeed = 0.2; // Adjust this value to control the appearing speed
+          line.userData.disappearingSpeed = 0.08; // Adjust this value to control the disappearing speed
+          scene.add(line);
+        }
+      }
 
       // Handle window resize
       window.addEventListener('resize', () => {
@@ -116,7 +122,17 @@
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
       });
-
+      // Handle mouse out event
+      window.addEventListener(
+        'mouseout',
+        () => {
+          // Set target opacity for all objects to 0
+          for (let i = 0; i < scene.children.length; i++) {
+            scene.children[i].userData.targetOpacity = 0;
+          }
+        },
+        false
+      );
       // Start animation
       animate();
     </script>
