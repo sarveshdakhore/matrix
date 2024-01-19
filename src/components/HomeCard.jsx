@@ -38,7 +38,6 @@ const HomeCard = ({ index, title, description, link, src }) => {
           <div className="w-[50%]">
             <h1>{title}</h1>
             <h3>{description}</h3>
-
             <Link to={`/${link}`}>
               <button className="bg-purple-700 text-white text-md rounded-md p-2">
                 {link}
