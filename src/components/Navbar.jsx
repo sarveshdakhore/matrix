@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../public/logo.png";
 const Navbar = () => {
   return (
-    <div className="bg-black w-full h-20 text-white">
+    <div className="w-full h-20 text-white">
       <div className="flex justify-between items-center h-full px-10">
         <div className="text-2xl flex gap-4 items-center justify-center">
           <Link to="/">

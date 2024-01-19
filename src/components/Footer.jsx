@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../public/logo.png";
 const Footer = () => {
   return (
-    <div className=" w-full bg-black text-white flex justify-center items-center">
+    <div className="bottom-0 w-full text-white flex justify-center items-center">
       <div className="w-[60%] mx-12 my-7">
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, hic

@@ -4,10 +4,120 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Vite + React + TS</title>
+    <style>
+      body { margin: 0; }
+      canvas {
+          position: fixed;
+          top: 0;
+          left: 0;
+      }
+      #root {
+          position: relative;
+          z-index: 1;
+      }
+  </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+
+    </div>
+    
+    <script type="module">
+      import * as THREE from 'three';
+
+      // Create scene
+      const scene = new THREE.Scene();
+
+      // Create camera
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 5;
+
+      // Create renderer
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      // Create invisible grid
+      const gridSize = window.innerWidth / 10;
+      const gridSpacing = 1;
+      const material = new THREE.LineBasicMaterial({ color: '#9400D3', transparent: true, opacity: 0 });
+      const hoverMaterial = new THREE.MeshStandardMaterial({ color: '#9400D3', emissive: '#9400D3', emissiveIntensity: 1 });
+
+      const raycaster = new THREE.Raycaster();
+      const mouse = new THREE.Vector2();
+
+      for (let x = -gridSize; x <= gridSize; x += gridSpacing) {
+          for (let y = -gridSize; y <= gridSize; y += gridSpacing) {
+              const geometry = new THREE.PlaneGeometry(gridSpacing, gridSpacing);
+              const edges = new THREE.EdgesGeometry(geometry);
+              const line = new THREE.LineSegments(edges, material);
+              line.position.set(x, y, 0);
+              scene.add(line);
+
+              // Add event listener for hover effect
+              line.userData.originalMaterial = material;
+              line.userData.hoverMaterial = hoverMaterial;
+          }
+      }
+
+      // Handle mouse move event
+      window.addEventListener('mousemove', (event) => {
+          event.preventDefault();
+
+          mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+          mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+          raycaster.setFromCamera(mouse, camera);
+
+          // Reset all objects to their original material
+          for (let i = 0; i < scene.children.length; i++) {
+              scene.children[i].material = scene.children[i].userData.originalMaterial;
+          }
+
+          // Set the hover material on the intersected objects
+          const intersects = raycaster.intersectObjects(scene.children);
+          for (let i = 0; i < intersects.length; i++) {
+              // Calculate distance from cursor to object
+              const distance = intersects[i].distance;
+
+              // Adjust opacity based on distance
+              const opacity = 1 - Math.min(distance / 5, 1);
+
+              // Create a new material with the adjusted opacity
+              const material = intersects[i].object.userData.hoverMaterial.clone();
+              material.opacity = opacity;
+
+              intersects[i].object.material = material;
+          }
+      }, false);
+
+          // Handle mouse out event
+      window.addEventListener('mouseout', () => {
+          // Reset all objects to their original material
+          for (let i = 0; i < scene.children.length; i++) {
+              scene.children[i].material = scene.children[i].userData.originalMaterial;
+          }
+      });
+
+      // Animation function
+      const animate = () => {
+          requestAnimationFrame(animate);
+          renderer.render(scene, camera);
+      };
+
+      // Handle window resize
+      window.addEventListener('resize', () => {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+
+      // Start animation
+      animate();
+  </script>
+  
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
