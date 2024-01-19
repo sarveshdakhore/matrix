@@ -5,6 +5,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Events from './components/Events';
 import Team from './components/Team';
+import Footer from './components/Footer';
 const App = () => {
   return (
     <>
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" element={<Events />} />
           <Route path="/" element={<Team />} />
         </Routes>
+        <Footer/>
       </Router>
     </>
   );

@@ -1,3 +1,7 @@
+:root::-webkit-scrollbar{
+  display: none;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +15,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 a {
@@ -25,10 +31,6 @@ a:hover {
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 
 h1 {
@@ -128,23 +130,80 @@ button:focus-visible {
 
 @-webkit-keyframes glow {
   from {
-    text-shadow: 
-      0 0 3px #4caf50, 
-      0 0 6px #4caf50, 
-      0 0 9px #4caf50, 
-      0 0 12px #4caf50, 
-      0 0 15px #4caf50, 
-      0 0 18px #4caf50, 
-      0 0 21px #4caf50;
+    text-shadow: 0 0 3px #4caf50, 0 0 6px #4caf50, 0 0 9px #4caf50, 0 0 12px #4caf50, 0 0 15px #4caf50, 0 0 18px #4caf50, 0 0 21px #4caf50;
   }
   to {
-    text-shadow: 
-      0 0 9px #2e7d32, /* Darker shade */
-      0 0 12px #4caf50, /* Original shade */
-      0 0 12px #4caf50, /* Original shade */
-      0 0 15px #81c784, /* Lighter shade */
-      0 0 15px #81c784, /* Lighter shade */
-      0 0 18px #a5d6a7, /* Lighter shade */
-      0 0 18px #a5d6a7, /* Lighter shade */
+    text-shadow: 0 0 9px #2e7d32, /* Darker shade */ 0 0 12px #4caf50, /* Original shade */ 0 0 12px #4caf50, /* Original shade */ 0 0 15px #81c784, /* Lighter shade */ 0 0 15px #81c784, /* Lighter shade */ 0 0 18px #a5d6a7, /* Lighter shade */ 0 0 18px #a5d6a7; /* Lighter shade */
   }
+}
+
+footer {
+  height: 31vh;
+  background-color: #232323;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-content {
+  width: 44%;
+  padding: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-content {
+  width: 22%;
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+button {
+  background-color: #fff;
+  color: #333;
+  padding: 0.5rem 0.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+.logo {
+  width: 22%;
+}
+
+.logo img {
+  width: 60%;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+}
+
+.socials img {
+  width: 35px;
+  padding-right: 2rem;
+}
+
+.vertical-hr {
+  width: 1px; /* Set the width of the vertical line */
+  height: 22vh; /* Set the height of the vertical line (full viewport height in this example) */
+  background-color: #28a541; /* Set the color of the vertical line */
+  margin: 0 auto; /* Center the vertical line horizontally */
 }
