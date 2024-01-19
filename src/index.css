@@ -97,9 +97,10 @@ button:focus-visible {
 }
 
 .logo-container img {
-  height: 60px;
-  width: 60px;
+  height: 55px;
+  width: 55px;
   object-fit: contain;
+  padding-left: 1rem,;
 }
 
 .nav-links {
@@ -125,21 +126,24 @@ button:focus-visible {
   -webkit-text-stroke-color: #4caf50;
   -webkit-text-fill-color: black;
   animation: glow 3s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate; /* Adjusted duration and easing */
-  padding: 0.2em 0.5em; /* Adjust padding for a better outline */
+}
+
+.multimedia{
+  padding-left: 1.25rem;
 }
 
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 3px #4caf50, 0 0 6px #4caf50, 0 0 9px #4caf50, 0 0 12px #4caf50, 0 0 15px #4caf50, 0 0 18px #4caf50, 0 0 21px #4caf50;
+    text-shadow: 0 0 1px #4caf50, 0 0 2px #4caf50, 0 0 4px #4caf50, 0 0 6px #4caf50, 0 0 8px #4caf50
   }
   to {
-    text-shadow: 0 0 9px #2e7d32, /* Darker shade */ 0 0 12px #4caf50, /* Original shade */ 0 0 12px #4caf50, /* Original shade */ 0 0 15px #81c784, /* Lighter shade */ 0 0 15px #81c784, /* Lighter shade */ 0 0 18px #a5d6a7, /* Lighter shade */ 0 0 18px #a5d6a7; /* Lighter shade */
+    text-shadow: 0 0 2px #2e7d32, /* Darker shade */ 0 0 4px #4caf50, /* Original shade */ 0 0 6px #4caf50, /* Original shade */ 0 0 8px #81c784, /* Lighter shade */ 0 0 10px #81c784 /* Lighter shade */ 
   }
 }
 
 footer {
   height: 31vh;
-  background-color: #232323;
+  background-color: #140d0da7;
   color: #fff;
   text-align: center;
 }

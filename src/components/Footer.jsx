@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo.png';
+import logon from '../assets/logon.png';
 import twitter from '../assets/twitterx.svg'
 import facebook from '../assets/facebook.svg'
 import instagram from '../assets/instagram.svg'
@@ -9,7 +9,7 @@ const Footer = () => {
     <footer>
       <div className="footer-content">
         <div className="logo">
-          <img src={logo} alt="Matrix VIT Multimedia Club Logo" />
+          <img src={logon} alt="Matrix VIT Multimedia Club Logo" />
         </div>
         <div className="vertical-hr"></div>
         <div className="left-content">
