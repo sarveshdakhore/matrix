@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import logon from '../assets/logon.png';
 import twitter from '../assets/twitterx.svg'
