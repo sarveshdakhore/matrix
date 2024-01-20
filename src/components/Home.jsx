@@ -5,8 +5,8 @@ import About from './About';
 const Home = () => {
   return (
     <>
-    <div style={{ display: 'flex', alignItems:'center', justifyContent: 'center', minHeight: '100vh', flexDirection: 'row' }}>
-      <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'coulmn' }}>
+    <div className="home-heading"style={{ display: 'flex', alignItems:'center', justifyContent: 'center', minHeight: '100vh', flexDirection: 'row' }}>
+      <div className="home-content" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'coulmn' }}>
         <h1 className="heading" style={{ margin: 0}}>
           MATRIX
         </h1>

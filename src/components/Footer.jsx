@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
         <div className="vertical-hr"></div>
         <div className="left-content">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, possimus delectus tenetur quisquam blanditiis.</p>
+          <p className='footer-text'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, possimus delectus tenetur quisquam blanditiis.</p>
           <div className="socials">
             <img src={instagram}/>
             <img src={facebook}/>
