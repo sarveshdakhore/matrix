@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Solway:wght@500&display=swap');
 :root::-webkit-scrollbar {
   display: none;
 }
@@ -31,6 +32,7 @@ a:hover {
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Solway', serif;
 }
 
 h1 {
@@ -125,7 +127,7 @@ button:focus-visible {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #4caf50;
   -webkit-text-fill-color: black;
-  animation: glow 3s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate; /* Adjusted duration and easing */
+  animation: glow 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate; /* Adjusted duration and easing */
 }
 
 .multimedia {
@@ -249,7 +251,8 @@ button {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 10rem;
+  margin-bottom: 20rem;
+  margin-top: 10rem;
 }
 
 .domain {
@@ -263,7 +266,7 @@ button {
   scale: 0.8; opacity: 0;
   animation: fade-in linear forwards;
   animation-timeline: view();
-  animation-range: 150px 500px;
+  animation-range: 0px 500px;
 }
 
 .domain h1 {
@@ -315,7 +318,7 @@ button {
   scale: 0.8; opacity: 0;
   animation: fade-in linear forwards;
   animation-timeline: view();
-  animation-range: 150px 500px;
+  animation-range: 0px 500px;
 }
 
 .aboutus-content{
@@ -340,4 +343,24 @@ button {
 
 @keyframes fade-in {
   to {scale: 1; opacity: 1;}
+}
+
+.events{
+  width: 90%;
+  display: flex;
+  margin: 3rem;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 2rem;
+  scale: 0.8; opacity: 0;
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: 0px 500px;
+}
+
+.events .images img{
+  width: 45%;
+  margin: 1.5rem;
 }

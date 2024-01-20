@@ -5,15 +5,20 @@ import About from './About';
 const Home = () => {
   return (
     <>
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh'}}>
-      <h1 className="heading" style={{ fontWeight: 900, fontSize: 60, color: '#4CAF50' }}>
-        MATRIX
-      </h1>
-      <h1 className="heading multimedia" style={{ fontWeight: 900, fontSize: 60, color: '#4CAF50' }}>
-        VIT MULTIMEDIA CLUB
-      </h1>
-    </div>
-    <About/>
+    <div style={{ display: 'flex', alignItems:'center', justifyContent: 'center', minHeight: '100vh', flexDirection: 'row' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'coulmn' }}>
+        <h1 className="heading" style={{ margin: 0}}>
+          MATRIX
+        </h1>
+        <div>
+          <h1 className="heading multimedia" style={{ margin: 0}}>
+            VIT MULTIMEDIA CLUB
+          </h1>
+          <h2 style={{ paddingLeft: '2rem', margin: '0.2rem'}}>India&apos;s First Multimedia Club</h2>
+        </div>
+      </div>
+      </div>
+      <About />
     </>
   );
 };

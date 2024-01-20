@@ -1,19 +1,24 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import image from '../assets/image1.png';
 import image2 from '../assets/image2.png';
-import escape from '../assets/escapematrix.png';
-import bollywood from '../assets/bollywood.png';
 
-const About = () => {
+const AboutUs = () => {
   return (
     <div className="background">
-      <div className="events">
+      <div className="domain">
         <h1 style={{ fontSize: 60 }}>
-          Our Flagship <span style={{ color: '#C477CB' }}> Events</span>
+          <span style={{ color: '#C477CB' }}>DOMAINS</span> <span> WE OFFER</span>
         </h1>
-        <div className="images">
-          <img src={escape} alt="" />
-          <img src={bollywood} alt="" />
+        <div className="text">
+          <div className="content">Photography</div>
+          <div className="content">Videography</div>
+          <div className="content">Design</div>
+          <div className="content">Photography</div>
+          <div className="content">Videography</div>
+        </div>
+        <div className="image">
+          <img src={image} alt="" />
         </div>
       </div>
       <div className="aboutus">
@@ -36,4 +41,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutUs;
