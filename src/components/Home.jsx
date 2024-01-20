@@ -5,7 +5,7 @@ import About from './About';
 const Home = () => {
   return (
     <>
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '125vh'}}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh'}}>
       <h1 className="heading" style={{ fontWeight: 900, fontSize: 60, color: '#4CAF50' }}>
         MATRIX
       </h1>

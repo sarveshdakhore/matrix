@@ -249,7 +249,6 @@ button {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 10rem;
   margin-bottom: 10rem;
 }
 
@@ -261,6 +260,10 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 2rem;
+  scale: 0.8; opacity: 0;
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: 150px 500px;
 }
 
 .domain h1 {
@@ -309,6 +312,10 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 2rem;
+  scale: 0.8; opacity: 0;
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: 150px 500px;
 }
 
 .aboutus-content{
@@ -329,4 +336,8 @@ button {
 
 .aboutus-image img{
  width: 95%;
+}
+
+@keyframes fade-in {
+  to {scale: 1; opacity: 1;}
 }
