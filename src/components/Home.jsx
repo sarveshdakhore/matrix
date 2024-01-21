@@ -70,12 +70,14 @@ const Home = () => {
           const x = e.clientX - (rect.left + rect.width / 2);
           const y = e.clientY - (rect.top + rect.height / 2);
           const distance = Math.sqrt(x * x + y * y);
-          if (distance < 165) {
+          if (distance < 185) {
             img.style.opacity = 1;
             img.style.transition = 'opacity 0.2s ease-in';
+            img.className = 'hover-opacity glow';
           } else {
-            img.style.opacity = 0.4;
+            img.style.opacity = 0.75;
             img.style.transition = 'opacity 0.5s ease-out';
+            img.className = 'hover-opacity';
           }
         });
       } else {
