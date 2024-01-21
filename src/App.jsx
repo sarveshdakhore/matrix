@@ -7,6 +7,8 @@ import Events from './components/Events';
 import Team from './components/Team';
 import Footer from './components/Footer';
 import AboutUs from './components/AboutUs';
+
+
 const App = () => {
   return (
     <>

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Solway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,200&family=Roboto+Mono:ital,wght@1,300&display=swap');
+
 :root::-webkit-scrollbar {
   display: none;
 }
@@ -34,6 +36,12 @@ body {
   padding: 0;
   font-family: 'Solway', serif;
 }
+.robotoi{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  color :#3f7ce0
+}
+
 
 h1 {
   font-size: 3.2em;
@@ -251,8 +259,8 @@ button {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 20rem;
-  margin-top: 10rem;
+  margin-bottom: 5rem;
+  margin-top: 0rem;
 }
 
 .domain {
@@ -450,6 +458,7 @@ button {
   .home-heading {
     flex-direction: row;
     margin-right: 1rem;
+    width: 100% !important;
   }
 
   .home-content {
@@ -476,4 +485,22 @@ button {
     object-fit: contain;
     padding-left: 0.5rem;
   }
+}
+
+.pngImage {
+  opacity: 0.5;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+
+.pngImage:hover {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px purple);
+}
+
+.png_container td{
+  border: '1px solid red' !important;
+  margin:'0';
+  padding:'0';
+  border-spacing:'0'; 
 }
