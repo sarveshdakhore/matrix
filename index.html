@@ -112,7 +112,7 @@
           line.position.set(x, y, 0);
           line.userData.targetOpacity = 0;
           
-          line.userData.appearingSpeed = 0.21; // Adjust this value to control the appearing speed
+          line.userData.appearingSpeed = 0.26; // Adjust this value to control the appearing speed
           line.userData.disappearingSpeed = 0.07; // Adjust this value to control the disappearing speed
           scene.add(line);
         }
@@ -131,7 +131,7 @@
           // Set target opacity for all objects to 0
           for (let i = 0; i < scene.children.length; i++) {
             scene.children[i].userData.targetOpacity = 0;
-            scene.children[i].material.color.set('#91118f'); // Set to grey color
+            scene.children[i].material.color.set('#9400D3'); // Set to grey color
           }
         },
         false
