@@ -62,7 +62,22 @@ const Home = () => {
     if (table && table.rows && table.rows[row]) {
       const cell = table.rows[row].cells[column];
       if (cell) {
-        cell.innerHTML = `<img src="${imageSrc}" alt="Image" style="width: 100%; height: 100%; object-fit: contain;" />`;
+        cell.innerHTML = `<img src="${imageSrc}" alt="Image" style="width: 100%; height: 100%; object-fit: contain; opacity: 0.5;" class="hover-opacity" />`;
+        const img = cell.querySelector('img');
+        img.style.transition = 'opacity 0.5s ease-out';
+        window.addEventListener('mousemove', (e) => {
+          const rect = img.getBoundingClientRect();
+          const x = e.clientX - (rect.left + rect.width / 2);
+          const y = e.clientY - (rect.top + rect.height / 2);
+          const distance = Math.sqrt(x * x + y * y);
+          if (distance < 165) {
+            img.style.opacity = 1;
+            img.style.transition = 'opacity 0.2s ease-in';
+          } else {
+            img.style.opacity = 0.4;
+            img.style.transition = 'opacity 0.5s ease-out';
+          }
+        });
       } else {
         console.error(`Cell at column ${column} does not exist in row ${row}`);
       }
@@ -70,9 +85,6 @@ const Home = () => {
       console.error(`Row at index ${row} does not exist in the table`);
     }
   }
-  
-
-
 
   return (
     <>

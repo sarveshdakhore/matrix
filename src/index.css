@@ -74,6 +74,7 @@ button:focus-visible {
   }
   a:hover {
     color: #747bff;
+    color: #a200d3e1;
   }
   button {
     background-color: #f9f9f9;
@@ -503,4 +504,14 @@ button {
   margin:'0';
   padding:'0';
   border-spacing:'0'; 
+}
+.hover-opacity {
+  opacity: 0.5;  
+}
+
+.hover-opacity:hover {
+  opacity: 0.85;
+}
+.glow {
+  filter: drop-shadow(0 0 5px rgba(239, 91, 172, 0.733));
 }
