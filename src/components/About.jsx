@@ -3,6 +3,7 @@ import React from 'react';
 import image2 from '../assets/image2.png';
 import escape from '../assets/escapematrix.png';
 import bollywood from '../assets/bollywood.png';
+import Card from './Card';
 
 const About = () => {
   return (
@@ -16,6 +17,7 @@ const About = () => {
           <img src={bollywood} alt="" />
         </div>
       </div>
+      <Card/>
       <div className="aboutus">
         <div className="aboutus-image">
           <img src={image2} alt="" />
