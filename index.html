@@ -40,7 +40,7 @@
       // Create invisible grid
       const gridSize = window.innerWidth / 10;
       const gridSpacing = 1;
-      const material = new THREE.LineBasicMaterial({ color: '#b300ff', transparent: true, opacity: 0.3 });
+      const material = new THREE.LineBasicMaterial({ color: '#7360DF', transparent: true, opacity: 0.3 });
 
       const raycaster = new THREE.Raycaster();
       const mouse = new THREE.Vector2();
@@ -111,7 +111,7 @@
           line.position.set(x, y, 0);
           line.userData.targetOpacity = 0;
           
-          line.userData.appearingSpeed = 0.25; // Adjust this value to control the appearing speed
+          line.userData.appearingSpeed = 0.29; // Adjust this value to control the appearing speed
           line.userData.disappearingSpeed = 0.07; // Adjust this value to control the disappearing speed
           scene.add(line);
         }

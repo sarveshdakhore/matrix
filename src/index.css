@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Solway:wght@300;400;500;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,200&family=Roboto+Mono:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root::-webkit-scrollbar {
   display: none;
@@ -34,12 +36,14 @@ a:hover {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Solway', serif;
+  /* font-family: 'Solway', serif; */
+
+
 }
 .robotoi{
   font-family: 'Roboto Condensed', sans-serif;
   font-family: 'Roboto Mono', monospace;
-  color :#FF00FF
+  color :#F2AFEF
 }
 
 
@@ -130,21 +134,27 @@ button:focus-visible {
 }
 
 .heading {
-  font-weight: 900;
-  font-size: 60px;
+  font-weight: 600;
+  font-size: 100px;
   display: inline-block;
   -webkit-text-stroke-width: 2px;
   /* -webkit-text-stroke-color: #4caf50; */
-  -webkit-text-stroke-color: #00eeff;
-  -webkit-text-fill-color: black;
+  -webkit-text-stroke-color: #F3F8FF;
+  -webkit-text-fill-color: #F3F8FF;
   animation: glow 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate; /* Adjusted duration and easing */
+}
+.matrixH{
+  font-size: 100px;
+  -webkit-text-stroke-color: #7E30E1;
+  -webkit-text-fill-color: #7E30E1;
+
 }
 
 .multimedia {
   padding-left: 1.25rem;
 }
 
-@keyframes glow {
+/* @keyframes glow {
   from {
     text-shadow: 0 0 1px #4caf50, 0 0 2px #4caf50, 0 0 4px #4caf50, 0 0 6px #4caf50, 0 0 8px #4caf50;
   }
@@ -160,7 +170,7 @@ button:focus-visible {
   to {
     text-shadow: 0 0 2px #2e7d32, 0 0 4px #4caf50, 0 0 6px #4caf50, 0 0 8px #81c784, 0 0 10px #81c784;
   }
-}
+} */
 
 footer {
   height: 31%;
@@ -599,4 +609,8 @@ button {
 
 .card-color3{
   background-color: #3EDFD5;
+}
+
+.home-content{
+  padding-left: 3.2rem !important;
 }

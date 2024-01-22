@@ -43,16 +43,16 @@ const Home = () => {
       setTable2(newTable2);
       
       setTimeout(() => {
-        putImageInTable('png_c1', [1, 0], image1);
-        putImageInTable('png_c1', [0, 1], image2);
-        putImageInTable('png_c1', [2, 2], image3);
-        putImageInTable('png_c1', [0, 3], image4);
-        putImageInTable('png_c1', [2, 4], image5);
+        putImageInTable('png_c1', [2, 0], image3);
+        putImageInTable('png_c1', [1, 1], image7);
+        // putImageInTable('png_c1', [2, 2], image3);
+        putImageInTable('png_c1', [1, 3], image4);
+        // putImageInTable('png_c1', [2, 4], image5);
     
-        putImageInTable('png_c2', [0, 0], image3);
+        // putImageInTable('png_c2', [0, 0], image3);
         putImageInTable('png_c2', [1, 1], image4);
         putImageInTable('png_c2', [2, 2], image6);
-        putImageInTable('png_c2', [0, 3], image7);
+        // putImageInTable('png_c2', [0, 3], image7);
         putImageInTable('png_c2', [1, 4], image1);
     
       }, 0);
@@ -100,11 +100,11 @@ const Home = () => {
             </table>
           </div>
           <div className="home-content" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'coulmn' }}>
-            <h1 className="heading" style={{ margin: 0}}>MATRIX</h1>
+            <h1 className="heading matrixH" style={{ margin: 0}}>MATRIX</h1>
             <div>
-              <h1 className="heading multimedia" style={{ margin: 0}}>VIT MULTIMEDIA CLUB</h1>
+              <h1 className="heading multimedia" style={{ margin: 0}}>CLUB</h1>
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <h2 className='robotoi' style={{ paddingRight: '0rem', margin: '0.2rem', fontStyle: 'italic !important' }}><i>India&apos;s First Multimedia Club</i></h2>
+                <h2 className='robotoi' style={{ paddingRight: '0rem', margin: '0.2rem', fontStyle: 'italic !important' }}><i>&emsp;India&apos;s First Multimedia Club</i></h2>
               </div>
             </div>
           </div>
