@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <>
       <div className="scroll-watcher"></div>
-      <div className="navbar">
+      <div id='navbar' className="navbar">
         <div className="navbar-content">
           <div className="logo-container">
             <Link to="/">

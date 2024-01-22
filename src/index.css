@@ -37,8 +37,6 @@ body {
   margin: 0;
   padding: 0;
   /* font-family: 'Solway', serif; */
-
-
 }
 .robotoi {
   font-family: 'Roboto Condensed', sans-serif;
@@ -125,7 +123,7 @@ button:focus-visible {
   color: white;
   text-decoration: none;
   margin-right: 15px;
-  transition: color 0.3s ease; /* Smooth transition for color change */
+  transition: color 0.07s ease; /* Smooth transition for color change */
 }
 
 .nav-links a:hover {
@@ -175,8 +173,11 @@ footer {
   height: 31%;
   background-color: #140d0da7;
   color: #fff;
+  margin-top: auto;
+  width: 100%;
   text-align: center;
 }
+
 
 .footer-content {
   display: flex;
@@ -506,16 +507,6 @@ button {
   }
 }
 
-.pngImage {
-  opacity: 0.5;
-  position: absolute;
-  transition: all 0.5s ease-in-out;
-}
-
-.pngImage:hover {
-  opacity: 1;
-  filter: drop-shadow(0 0 10px purple);
-}
 
 .png_container td {
   border: '1px solid red' !important;
@@ -595,3 +586,4 @@ button {
 .home-content{
   padding-left: 3.2rem !important;
 }
+

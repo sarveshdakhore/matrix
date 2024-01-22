@@ -64,20 +64,20 @@ const Home = () => {
       if (cell) {
         cell.innerHTML = `<img src="${imageSrc}" alt="Image" style="width: 100%; height: 100%; object-fit: contain; opacity: 0.5;" class="hover-opacity" />`;
         const img = cell.querySelector('img');
-        img.style.transition = 'opacity 0.5s ease-out';
+        img.style.transition = 'opacity 0.5s ease-out, filter 0.5s ease-out';
         window.addEventListener('mousemove', (e) => {
           const rect = img.getBoundingClientRect();
           const x = e.clientX - (rect.left + rect.width / 2);
           const y = e.clientY - (rect.top + rect.height / 2);
           const distance = Math.sqrt(x * x + y * y);
           if (distance < 185) {
-            img.style.opacity = 1;
-            img.style.transition = 'opacity 0.2s ease-in';
-            img.className = 'hover-opacity glow';
+            img.style.transition = 'none'; // No transition when appearing
+            img.style.opacity = 0.9;
+            img.style.filter = 'drop-shadow(0 0 45px #f2afefe0)';
           } else {
-            img.style.opacity = 0.75;
-            img.style.transition = 'opacity 0.5s ease-out';
-            img.className = 'hover-opacity';
+            img.style.transition = 'opacity 0.5s ease-out, filter 0.5s ease-out'; // Transition when disappearing
+            img.style.opacity = 0.5;
+            img.style.filter = 'none';
           }
         });
       } else {
@@ -87,7 +87,6 @@ const Home = () => {
       console.error(`Row at index ${row} does not exist in the table`);
     }
   }
-
   return (
     <>
       <div className="home-heading" style={{ display: 'flex', alignItems:'center', justifyContent: 'center', minHeight: '100vh', flexDirection: 'row', width:'100%'}}>
