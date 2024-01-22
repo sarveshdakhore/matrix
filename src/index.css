@@ -129,7 +129,7 @@ button:focus-visible {
 }
 
 .nav-links a:hover {
-  color: #4caf50; /* Change to your desired hover color */
+  color: #7E30E1; /* Change to your desired hover color */
 }
 
 .heading {
@@ -533,13 +533,11 @@ button {
 }
 
 .glow {
-  filter: drop-shadow(0 0 30px rgb(255, 255, 255));
+  filter: drop-shadow(0 0 45px #f2afefe0);
 }
 
 .carousel {
   width: calc(100% - 60px); /* Subtract the total horizontal margin from the width */
-  padding: 60px;
-  margin: 0 40px;
 }
 
 .card img {

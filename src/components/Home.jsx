@@ -18,7 +18,7 @@ const Home = () => {
 
     useEffect(() => {
       const rows = 3;
-      const columns = 5;
+      const columns = 9;
       
       const imgDiv = document.querySelector('.png_container');
       const width = imgDiv.offsetWidth;
@@ -43,19 +43,19 @@ const Home = () => {
       setTable2(newTable2);
       
       setTimeout(() => {
-        putImageInTable('png_c1', [2, 0], image3);
+        putImageInTable('png_c1', [2, 4], image3);
         putImageInTable('png_c1', [1, 1], image7);
         // putImageInTable('png_c1', [2, 2], image3);
-        putImageInTable('png_c1', [1, 3], image4);
+        putImageInTable('png_c1', [1, 6], image5);
         // putImageInTable('png_c1', [2, 4], image5);
     
         // putImageInTable('png_c2', [0, 0], image3);
-        putImageInTable('png_c2', [1, 1], image4);
-        putImageInTable('png_c2', [2, 2], image6);
-        // putImageInTable('png_c2', [0, 3], image7);
-        putImageInTable('png_c2', [1, 4], image1);
+        putImageInTable('png_c2', [0, 0], image4);
+        putImageInTable('png_c2', [2, 5], image6);
+        putImageInTable('png_c2', [1, 2], image2);
+        putImageInTable('png_c2', [1, 8], image1);
     
-      }, 0);
+      }, 500);
     }, []);
   function putImageInTable(divId, [row, column], imageSrc) {
     const table = document.querySelector(`#${divId} table`);
@@ -90,7 +90,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="home-heading" style={{ display: 'flex', alignItems:'center', justifyContent: 'center', minHeight: '110vh', flexDirection: 'row', width:'100%'}}>
+      <div className="home-heading" style={{ display: 'flex', alignItems:'center', justifyContent: 'center', minHeight: '100vh', flexDirection: 'row', width:'100%'}}>
         <div style={{display: 'flex', flexDirection: 'column',width:'100%'}}>
           <div id='png_c1' ref={containerRef1} className='png_container' style={{height: '230px', width: '100%', position: 'relative', marginBottom:'5%'}}>
             <table style={{ width: '100%', height: '100%' }}>
