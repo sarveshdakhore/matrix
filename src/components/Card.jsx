@@ -14,23 +14,33 @@ const Carousel = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000, // Increase this to increase the time between auto-play transitions
-    pauseOnHover: false,
+    pauseOnHover: true,
     rows: 2,
+    responsive: [
+      {
+        breakpoint: 768, // window width to apply these settings
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rows: 1, // only one row
+        }
+      }
+    ]
   };
 
   const names = [
-    'John Doe',
-    'Jane Smith',
-    'Bob Johnson',
-    'Alice Williams',
-    'Charlie Brown',
-    'Emily Davis',
-    'David Miller',
-    'Sophia Wilson',
-    'Michael Moore',
-    'Olivia Taylor',
-    'William Anderson',
-    'Emma Thomas',
+    'Ravi Kumar',
+    'Sunita Sharma',
+    'Amit Patel',
+    'Priya Singh',
+    'Vijay Verma',
+    'Anita Desai',
+    'Rajesh Gupta',
+    'Pooja Yadav',
+    'Sanjay Mehra',
+    'Deepa Bhatia',
+    'Harish Reddy',
+    'Geeta Nair',
   ];
 
   const testimonies = [
@@ -56,7 +66,7 @@ const Carousel = () => {
     return {
       title: name,
       text: testimonies[index],
-      colorClass: colorClass, // Add the color class to the card object
+      colorClass: colorClass, 
     };
   });
 
@@ -64,7 +74,7 @@ const Carousel = () => {
 
   return (
     <>
-    <h2 style={{fontSize: '40px', marginBottom: '1rem'}}>Don&apos;t take our word for it, see what the <span style={{color: '#C477CB'}}>community</span> is saying</h2>
+    <h2 className="card-heading" style={{fontSize: '40px', marginBottom: '1rem'}}>Don&apos;t take our word for it, see what the <span style={{color: '#C477CB'}}>community</span> is saying</h2>
     <div className="carousel">
       <Slider {...settings}>
         {cards.map((card, index) => (

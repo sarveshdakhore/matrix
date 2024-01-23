@@ -21,12 +21,6 @@ const Navbar = () => {
             <div className="mr-5">
               <Link to="/events">Events</Link>
             </div>
-            <div className="mr-5">
-              <Link to="/about">About Us</Link>
-            </div>
-            <div className="mr-5">
-              <Link to="/team">Our Team</Link>
-            </div>
           </div>
         </div>
       </div>
