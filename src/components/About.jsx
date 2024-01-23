@@ -28,8 +28,16 @@ const About = () => {
           </h1>
           <div className="aboutus-text">
             <div className="aboutus-para">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas mollitia asperiores consequatur dolore nostrum, voluptatem officiis ex? Maiores similique suscipit incidunt, facilis dolorem adipisci autem, doloribus optio velit quidem neque?Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Fugit rem dolorum cum voluptatibus enim voluptates ratione nesciunt et animi voluptas doloremque quo tempora illo, dignissimos harum odit, expedita quibusdam debitis!
+              <p>
+              MATRIX VIT is a student club in VIT Vellore which aims at promoting talents and knowledge about the digital world and media using various media tools.
+              </p>
+              <p>
+              We are a bunch of tech savy creative people with artistic vision who would like to encourage and promote talents and express their creative pragmatic mindset. Multimedia is the convergence of these different professions and therefore we have our team divided into domains like technical, finance, design and management.
+              </p>
+              <p>
+              Matrix VIT offers students a chance to spark their imaginations and innovate while showcasing their technical prowess.
+              </p>
+
             </div>
           </div>
         </div>

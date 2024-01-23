@@ -12,6 +12,7 @@ import image7 from '../assets/home/random/img7.svg';
 import image8 from '../assets/home/random/img8.svg';
 import image9 from '../assets/home/random/img9.svg';
 
+
 const Home = () => {
   const containerRef1 = useRef(null);
   const containerRef2 = useRef(null);
@@ -45,16 +46,17 @@ const Home = () => {
       setTable2(newTable2);
       
       setTimeout(() => {
-        putImageInTable('png_c1', [2, 4], image8);
-        putImageInTable('png_c1', [1, 1], image7);
-        putImageInTable('png_c1', [1, 6], image5);
+        putImageInTable('png_c1', [1, 4], image3);
+        putImageInTable('png_c1', [2, 1], image7);
+        // putImageInTable('png_c1', [2, 2], image3);
+        putImageInTable('png_c1', [2, 7], image5);
         // putImageInTable('png_c1', [2, 4], image5);
-        putImageInTable('png_c1', [2, 8], image2);
-        putImageInTable('png_c2', [1, 2], image3);
+    
+        // putImageInTable('png_c2', [0, 0], image3);
         putImageInTable('png_c2', [0, 0], image4);
-        putImageInTable('png_c2', [2, 4], image6);
-        putImageInTable('png_c2', [0, 6], image9);
-        putImageInTable('png_c2', [2, 8], image1);
+        putImageInTable('png_c2', [2, 6], image6);
+        putImageInTable('png_c2', [1, 3], image8);
+        putImageInTable('png_c2', [0, 8], image9);
     
       }, 500);
     }, []);
