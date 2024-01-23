@@ -106,7 +106,7 @@ const Home = () => {
             <div>
               <h1 className="heading multimedia" style={{ margin: 0}}>CLUB</h1>
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <h2 className='robotoi' style={{ paddingRight: '0rem', margin: '0.2rem', fontStyle: 'italic !important' }}><i>&emsp;India&apos;s First Multimedia Club</i></h2>
+                <h2 className='robotoi' style={{ paddingRight: '0rem', margin: '0.2rem', fontStyle: 'italic !important' }}><i>&emsp;VIT&apos;s First Multimedia Club</i></h2>
               </div>
             </div>
           </div>
