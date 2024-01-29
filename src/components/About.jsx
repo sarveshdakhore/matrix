@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import image2 from '../assets/image2.png';
-import escape from '../assets/escapematrix.png';
-import bollywood from '../assets/bollywood.png';
+import escape from '../assets/events/bollywood.png';
+import bollywood from '../assets/events/escapematrix.png';
 import Card from './Card';
 
 const About = () => {
@@ -13,10 +13,12 @@ const About = () => {
           Our Flagship <span style={{ color: '#C477CB' }}> Events</span>
         </h1>
         <div className="images">
-          <img src={escape} alt="" />
           <img src={bollywood} alt="" />
+          <img src={escape} alt="" />
         </div>
+<br /><br />
       </div>
+
       <Card/>
       <div className="aboutus">
         <div className="aboutus-image">

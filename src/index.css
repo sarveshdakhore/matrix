@@ -483,8 +483,21 @@ button {
 .card {
   transition: transform 0.2s; /* Animation */
 }
-
+.event_info{
+  padding: 7rem;
+  padding-top: 0%;
+}
+.event_info p{
+  font-size: 1.5rem;
+}
 @media (max-width: 767px) {
+  .event_info{
+    padding: 3rem;
+    padding-top: 0%;
+  }
+  .event_info p{
+    font-size: 1.15rem;
+  }
   * {
     box-sizing: border-box !important;
   }
@@ -627,3 +640,9 @@ button {
     margin-bottom: 0rem ;
   }
 }
+
+.events img{
+  border-radius: 2rem;
+}
+
+
