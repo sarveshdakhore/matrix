@@ -11,7 +11,7 @@ const About = () => {
     <div>
       <div className="background">
         <Link to="/events">
-          <div className="events">
+          <div className="events" style={{marginLeft:"5rem"}}>
             <h1 style={{ fontSize: 60, color:"white" }}>
               Our Flagship <span style={{ color: '#C477CB' }}> Events</span>
             </h1>
@@ -26,7 +26,7 @@ const About = () => {
       </div>
 
       <Card />
-      <div className="aboutus">
+      <div className="aboutus" style={{marginLeft:"5rem"}}>
         <div className="aboutus-image">
           <img src={image2} alt="" />
         </div>
